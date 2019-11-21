@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+
+// Colors
+
+/*
+// Start with assigning color names to specific hex values.
+$white:  #fff;
+$black:  #000;
+$red:    #d9534f;
+$orange: #DF8C2C;
+$yellow: #ffd500;
+$green:  #55783A;
+$blue:   #0275d8;
+$teal:   #5bc0de;
+$pink:   #ff5b77;
+$purple: #482F5B;
+$indigo:  #6610f2;
+$cyan:    #17a2b8;
+
+// Create grayscale
+$gray-dark:                 #292b2c;
+$gray:                      #464a4c;
+$gray-light:                #636c72;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #f7f7f9;
+
+$colors: (
+blue: $blue,
+indigo: $indigo,
+purple: $purple,
+pink: $pink,
+red: $red,
+orange: $orange,
+yellow: $yellow,
+green: $green,
+teal: $teal,
+cyan: $cyan,
+white: $white,
+gray-dark: $gray-dark,
+gray: $gray,
+gray-light: $gray-light,
+gray-lighter: $gray-lighter,
+gray-lightest: $gray-lightest
+);
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             $purple;
+$brand-success:             $green;
+$brand-info:                $teal;
+$brand-warning:             $orange;
+$brand-danger:              $red;
+$brand-inverse:             $gray-dark;
+
+
+$theme-colors: (
+primary: $purple,
+secondary: $green,
+success: $green,
+info: $cyan,
+warning: $yellow,
+danger: $red,
+light: $gray-lightest,
+dark: $gray-dark
+);
+*/
+
+// Pulse 4.1.0
+// Bootswatch
+
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #fafafa !default;
+$gray-200: #F9F8FC !default;
+$gray-300: #EDEDED !default;
+$gray-400: #cbc8d0 !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #444 !default;
+$gray-800: #343a40 !default;
+$gray-900: #17141F !default;
+$black:    #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #593196 !default;
+$pink:    #e83e8c !default;
+$red:     #FC3939 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #EFA31D !default;
+$green:   #13B955 !default;
+$teal:    #20c997 !default;
+$cyan:    #009CDC !default;
+
+$primary:       $purple !default;
+//$secondary:     #A991D4 !default;
+$secondary:     darken($green, 5%) !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-200 !default;
+$dark:          $gray-900 !default;
+
+// Options
+
+$enable-rounded: false !default;
+
+// Body
+
+$body-bg:                #f9f7e8;
+$body-color:                $gray-700 !default;
+
+// Links
+
+$link-hover-color:          $primary !default;
+
+// Fonts
+
+$font-size-base:              0.875rem !default;
+
+// Tables
+
+$table-border-color:          rgba(0, 0, 0, 0.05) !default;
+
+// Forms
+
+$input-focus-border-color:              $primary !default;
+
+// Dropdowns
+
+$dropdown-link-color:               $gray-700 !default;
+$dropdown-link-hover-color:         $white !default;
+$dropdown-link-hover-bg:            $primary !default;
+
+// Navs
+
+$nav-tabs-border-color:             $gray-300 !default;
+$nav-tabs-link-hover-border-color:  $primary !default;
+
+$nav-link-padding:                  0px;
+
+// Navbar
+
+//$navbar-padding-y:                  1.2rem !default;
+$navbar-padding-y:                  0px !default;
+$navbar-padding-x:                  0px !default;
+
+$navbar-dark-dark-color:           rgba($white,.9) !default;
+$navbar-dark-hover-color:           rgba($white,.9) !default;
+$navbar-dark-active-color:          rgba($white,.9) !default;
+
+$navbar-light-color:                rgba($black,.4) !default;
+$navbar-light-active-color:         rgba($black,.7) !default;
+$navbar-light-disabled-color:       rgba($black,.2) !default;
+
+// Progress bars
+
+$progress-bg:                       $gray-300 !default;
+$progress-bar-bg:                   $primary !default;
+
+// List group
+
+$list-group-bg:                     $gray-900 !default;
+$list-group-border-color:           $black !default;
+
+$list-group-hover-bg:               lighten($list-group-bg, 10%) !default;
+$list-group-active-color:           $white !default;
+$list-group-active-bg:              $list-group-bg !default;
+
+$list-group-disabled-color:         lighten($list-group-bg, 30%) !default;
+
+
+// Pulse 4.1.0
+// Bootswatch
+
+html {
+	min-height: 100%;
+}
+
+body {
+	// For sticky footer
+	display: flex;
+	flex-direction: column;
+	height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+}
+
+// Variables ===================================================================
+
+// Buttons =====================================================================
+
+.btn {
+
+	&:focus,
+		&:active,
+		&:active:focus,
+		&.active:focus {
+		outline: none;
+	}
+
+	&-secondary {
+		background-color: $white;
+		border-color: #ccc;
+		color: $gray-900;
+
+		&:hover {
+			background-color: $gray-300;
+			border-color: $gray-500;
+			color: $gray-900;
+		}
+
+		&.disabled {
+			background-color: $white;
+			border-color: lighten(#ccc, 5%);
+			color: lighten($gray-900, 5%);
+		}
+	}
+
+	&-warning {
+		color: $white;
+	}
+
+	&-primary:focus {
+		box-shadow: 0 0 5px lighten($primary, 10%);
+	}
+
+	&-secondary:focus {
+		box-shadow: 0 0 5px $gray-400;
+	}
+
+	&-success:focus {
+		box-shadow: 0 0 5px lighten($success, 10%);
+	}
+
+	&-info:focus {
+		box-shadow: 0 0 5px lighten($info, 10%);
+	}
+
+	&-warning:focus {
+		box-shadow: 0 0 5px lighten($warning, 10%);
+	}
+
+	&-danger:focus {
+		box-shadow: 0 0 5px lighten($danger, 10%);
+	}
+
+	&.disabled:focus {
+		box-shadow: none;
+	}
+
+}
+
+// Typography ==================================================================
+
+.navbar-brand {
+	font-family: 'Black Han Sans';
+	font-size: 2rem !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	line-height: 50px !important;
+}
+
+// Tables ======================================================================
+
+.table .thead-dark th {
+	background-color: $secondary;
+	border-color: $table-border-color;
+}
+
+// Forms =======================================================================
+
+.form-control:focus {
+	box-shadow: 0 0 5px rgba(100,65,164,.4);
+}
+
+// Inputs ======================================================================
+
+input[disabled] {
+	background-color: $gray-300 !important;
+}
+
+// Navs ========================================================================
+
+.nav-tabs {
+
+	.nav-link,
+	.nav-link.active, {
+		border-width: 0 0 1px 0;
+	}
+
+	.nav-link:hover,
+		.nav-link.active,
+		.nav-link.active:hover,
+		.nav-link.active:focus {
+		border-bottom: 1px solid $primary;
+	}
+
+	.nav-item + .nav-item {
+		margin-left: 0;
+	}
+}
+
+.breadcrumb {
+	&-item.active {
+		color: $gray-700;
+	}
+}
+
+
+.nav-link:hover {
+
+	background-color: darken($primary, 5%);
+}
+
+.nav-link,
+.nav-link.active, {
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	line-height: 50px;
+}
+
+// Indicators ==================================================================
+
+.badge {
+	padding-bottom: 0.4em;
+
+	&-secondary,
+	&-warning {
+		color: $white;
+	}
+}
+
+// Progress bars ===============================================================
+
+.progress {
+	height: 8px;
+}
+
+// Containers ==================================================================
+
+.list-group {
+
+	&-item {
+		color: rgba(255, 255, 255, 0.8);
+
+		&.active,
+		&:hover,
+			&:focus {
+			color: #fff;
+		}
+
+		&.active {
+			font-weight: bold;
+
+			&:hover {
+				background-color: $list-group-hover-bg;
+			}
+		}
+
+		&.disabled:hover {
+			color: $list-group-disabled-color;
+		}
+	}
+}
+
+// Jumbotron ===================================================================
+
+.jumbotron-dark {
+	color: $white;
+	text-shadow: 1px 0px 10px #000;
+
+	.btn, input, button, select, textarea, datalist, output {
+		text-shadow: none;
+	}
+
+
+	hr {
+		color: rgba( $white, 0.5 );
+		border-color: rgba( $white, 0.5 );
+	}
+}
+
+// Card ========================================================================
+
+a.card {
+
+	.card-body :not(.card-title) {
+		color: $body-color;
+		text-decoration: none !important;
+	}
+}
+
+a.card:hover {
+
+	border: 1px solid $success;
+
+	.card-body :not(.card-title) {
+		color: $body-color;
+		text-decoration: none !important;
+	}
+}
+
+// HTML Editor =================================================================
+
+.html-edit-button,
+.html-save-button {
+
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: $body-bg;
+    box-shadow: 0px 0px 20px $body-bg;
+	padding: 1px;
+	margin: 5px;
+	border-radius: 4px;
+	z-index: 1000;
+
+}
+
+// Homepage ====================================================================
+
+.index-page {
+
+	header .navbar {
+		margin-bottom: -100%;
+	}
+
+
+	.jumbotron {
+		background: url('../images/main-page/splash/current/splash.jpg');
+		background-size: cover;
+		text-align: center;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		hr {
+			max-width: 700px;
+		}
+	}
+
+	.jumbotron-full {
+		min-height: 100vh;
+	}
+}
+
+// Page Footer =================================================================
+
+footer {
+	a,
+	a:hover {
+		color: $success;
+	}
+}
+
+// Sticky Footer ===============================================================
+
+main {
+	flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+}
+
+footer {
+	flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+	padding: 20px;
+}
+
+// Blog Posts ==================================================================
+
+.blog-post {
+	background-color: $white;
+}
+
+
+// Post Page ===================================================================
+
+.post-page {
+
+	textarea {
+		resize: none;
+	}
+}
+
+// Imports:
+@import "../bootstrap/scss/bootstrap.scss";

@@ -1,0 +1,41 @@
+Header set Cache-Control "max-age=0, private, no-cache, no-store, must-revalidate"
+RewriteEngine on
+
+# TODO: Change https to http below if need be
+
+
+RewriteRule ^(.*)$ - [env=proto:http]
+
+
+# Using http
+RewriteCond %{ENV:proto} http
+RewriteCond %{HTTPS} on
+RewriteRule ^.*$ http://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+# Using https
+RewriteCond %{ENV:proto} https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+# Require www.
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule .* %{ENV:proto}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R]
+
+# Rewrite /foo/bar to /foo/bar.php
+RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
+
+# Return 404 if original request is /foo/bar.php
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
+
+#TODO: Update the URLs below
+
+ErrorDocument 400 http://www.localhost/Template%20Blog%20With%20Users%20(bootstrap%20v4.1.0)/error-pages/400
+ErrorDocument 403 http://www.localhost/Template%20Blog%20With%20Users%20(bootstrap%20v4.1.0)/error-pages/403
+ErrorDocument 404 http://www.localhost/Template%20Blog%20With%20Users%20(bootstrap%20v4.1.0)/error-pages/404
+ErrorDocument 500 http://www.localhost/Template%20Blog%20With%20Users%20(bootstrap%20v4.1.0)/error-pages/500
+
+<FilesMatch ".sql">
+    Order Allow,Deny
+    Deny from All
+</FilesMatch>
