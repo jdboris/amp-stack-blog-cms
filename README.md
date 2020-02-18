@@ -3,7 +3,7 @@ A customizable template to make any type of blog. Built on the AMP stack and Boo
 
 ![Example](https://i.imgur.com/FdLHhwo.png)
 
-<h1>SETUP</h1>
+<h1>Installing</h1>
 
 <h3>Create database schema</h3>
 
