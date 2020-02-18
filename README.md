@@ -3,7 +3,7 @@ A customizable template to make any type of blog. Built on the AMP stack and Boo
 
 ![Example](https://i.imgur.com/FdLHhwo.png)
 
-<h1>Installing</h1>
+<h1>Installation</h1>
 
 <h3>Create database schema</h3>
 
@@ -69,7 +69,7 @@ Copy sassc.exe into scss directory and create sass-compiler.bat...
     include_path = "...[ROOT DIRECTORY]"
     opcache.enable=0
 </code>
-<h1>DEVELOPMENT</h1>
+<h1>Development</h1>
 
 Follow the TODO instructions in the following files:
 
