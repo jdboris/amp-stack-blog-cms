@@ -1,7 +1,7 @@
 # amp-stack-blog-template
 A customizable template to make any type of blog. Built on the AMP stack and Bootstrap.
 
-[Example](https://i.imgur.com/FdLHhwo.png)
+![Example](https://i.imgur.com/FdLHhwo.png)
 
 <h1>SETUP</h1>
 
