@@ -1,6 +1,8 @@
 # amp-stack-blog-boilerplate
 A generic blog website template. Built on the AMP stack and Bootstrap.
-*NOTE: This is an old project with a lot of spaghetti code and bad practices*
+
+**⛔️ DEPRECATED**
+*This repository is no longer maintained and not recommended for use by anyone.*
 
 ![Example](https://i.imgur.com/PCH94m6.png)
 
